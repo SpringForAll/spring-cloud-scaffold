@@ -1,0 +1,5 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: scaffold-hystrix-dashboard

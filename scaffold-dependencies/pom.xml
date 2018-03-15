@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.9.RELEASE</version>
+		<version>1.5.10.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -33,7 +33,6 @@
 		<math3.version>3.6.1</math3.version>
 		<!-- spring boot -->
 		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
-		<spring-cloud-zookeeper.version>1.2.0.RELEASE</spring-cloud-zookeeper.version>
 		<!-- 和spring boot中spring-security4.2.3.RELEASE的版本一致 -->
 		<spring-security-cas.version>4.2.3.RELEASE</spring-security-cas.version>
 		<spring-session-redis.version>1.3.1.RELEASE</spring-session-redis.version>
@@ -44,8 +43,6 @@
 		<jaxrs.version>3.0.12.Final</jaxrs.version>
 		<!-- pinyin4j -->
 		<pinyin4j.version>2.5.1</pinyin4j.version>
-		<!-- hibernate -->
-		<hibernate.version>5.1.1.Final</hibernate.version>
 		<!-- mybatis -->
 		<mybatis-spring-boot.version>1.3.0</mybatis-spring-boot.version>
 		<pagehelper-spring-boot-starter.version>1.1.1</pagehelper-spring-boot-starter.version>
@@ -60,7 +57,6 @@
 		<mapstruct.version>1.2.0.Final</mapstruct.version>
 		<!-- 3.0.10 -->
 		<minio.version>3.0.10</minio.version>
-		<guava.version>20.0</guava.version>
 		<!-- validation -->
 		<javax-validation.version>2.0.0.Final</javax-validation.version>
 		<!-- elasticsearch -->
@@ -98,20 +94,13 @@
 	            <type>pom</type>
 	            <scope>import</scope>
 	        </dependency>
-			<!-- spring io platform依赖管理 -->
-			<!-- 注意：该依赖务必放在sprin个cloud依赖管理后面 -->
-			<!-- 详见：https://github.com/spring-cloud/spring-cloud-release/blob/master/docs/src/main/asciidoc/spring-cloud-starters.adoc#using-spring-cloud-dependencies-with-spring-io-platform -->
+			<!-- spring io platform -->
 			<dependency>
 				<groupId>io.spring.platform</groupId>
 				<artifactId>platform-bom</artifactId>
-				<version>Brussels-SR6</version>
+				<version>Brussels-SR7</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
 			</dependency>
 			<!-- apache commons -->
 			<dependency>
@@ -254,26 +243,6 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			<!-- 如果依赖下面的zk，请配置ribbon.okhttp.enabled=true -->
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-				<version>${spring-cloud-zookeeper.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>javax.ws.rs</groupId>
-						<artifactId>jsr311-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.jersey</groupId>
-						<artifactId>jersey-client</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.jersey.contribs</groupId>
-						<artifactId>jersey-apache-client4</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
 			<!-- xml -->
 			<dependency>
 				<groupId>xml-apis</groupId>
@@ -296,6 +265,7 @@
 				<artifactId>transport</artifactId>
 				<version>${elasticsearch.version}</version>
 			</dependency>
+			<!-- elasticsearch geo -->
 			<dependency>
 				<groupId>com.vividsolutions</groupId>
 				<artifactId>jts</artifactId>
