@@ -1,0 +1,24 @@
+server:
+  port: 8989
+
+management:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    non-secure-port: 8989
+
+spring:
+  application:
+    name: scaffold-tubine-stream-server
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: scaffold
+    password: scaffold
+
+
