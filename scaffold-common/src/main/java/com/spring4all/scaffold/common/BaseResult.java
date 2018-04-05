@@ -14,6 +14,8 @@ public class BaseResult<E> implements Serializable {
 
     public static final int FAIL_TYPE = -2;
 
+    public static final int NO_AUTH_TYPE = -3;
+
     private int type = ERROR_TYPE;
 
     private String code;

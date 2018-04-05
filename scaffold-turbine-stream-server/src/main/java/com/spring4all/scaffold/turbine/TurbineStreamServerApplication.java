@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream;
 import org.springframework.cloud.netflix.turbine.stream.TurbineApplication;
 
 /**
- * @author fangzhibin 
+ * @author fangzhibin
  */
 @SpringBootApplication
 @EnableTurbineStream

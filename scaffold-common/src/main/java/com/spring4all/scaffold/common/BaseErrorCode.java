@@ -8,7 +8,9 @@ public enum  BaseErrorCode {
 
     PARAMTER_ILLEGAL("400", "paramter illegal"),
 
-    SYSTEM_INTERNAL_ERROR("500", "system internal error");
+    SYSTEM_INTERNAL_ERROR("500", "system internal error"),
+
+    FORBIDDEN("403", "Forbidden");
 
     private String code;
 

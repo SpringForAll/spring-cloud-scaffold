@@ -1,5 +1,6 @@
 package com.spring4all.scaffold.resteasy.validation;
 
+import com.spring4all.scaffold.common.AuthorizationException;
 import com.spring4all.scaffold.common.BaseErrorCode;
 import com.spring4all.scaffold.common.BaseResult;
 import com.spring4all.scaffold.common.BusinessException;
@@ -31,7 +32,12 @@ public class ResteasyExceptionProvider implements ExceptionMapper<Exception> {
             BusinessException businessException = (BusinessException) e;
             BaseResult baseResult = new BaseResult(BaseResult.FAIL_TYPE, businessException.getCode(), businessException.getMsg(), businessException.getData());
             return buildResponse(e, Status.BAD_REQUEST, baseResult);
-        } else {
+        } else if (e instanceof AuthorizationException) {
+            AuthorizationException be = (AuthorizationException) e;
+            BaseResult baseResult = new BaseResult<>(BaseResult.NO_AUTH_TYPE,
+                be.getCode(), be.getMsg());
+            return buildResponse(e, Status.FORBIDDEN, baseResult);
+        }  else {
             BaseResult<String> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(), BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
             return buildResponse(e, Status.INTERNAL_SERVER_ERROR, baseResult);
         }
