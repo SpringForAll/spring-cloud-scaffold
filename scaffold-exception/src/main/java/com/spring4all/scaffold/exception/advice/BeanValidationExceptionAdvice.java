@@ -17,6 +17,9 @@ import javax.validation.ConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author fangzhibin
+ */
 @RestControllerAdvice
 public class BeanValidationExceptionAdvice {
 

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.IOException;
 
 /**
- *
+ * @author fangzhibin
  */
 public class ScaffoldErrorDecoder extends ErrorDecoder.Default {
 

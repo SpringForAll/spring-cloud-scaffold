@@ -3,7 +3,7 @@ package com.spring4all.scaffold.minio.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- *
+ * @author fangzhibin
  */
 @ConfigurationProperties(prefix = "scaffold.minio")
 public class MinioProperties {

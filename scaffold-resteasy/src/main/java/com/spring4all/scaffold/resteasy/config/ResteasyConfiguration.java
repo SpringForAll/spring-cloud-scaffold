@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.ws.rs.core.Application;
 import java.text.SimpleDateFormat;
 
+/**
+ * @author fangzhibin
+ */
 @Configuration
 public class ResteasyConfiguration {
 

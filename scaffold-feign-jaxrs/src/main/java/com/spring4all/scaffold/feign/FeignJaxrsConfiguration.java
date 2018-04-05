@@ -30,6 +30,5 @@ public class FeignJaxrsConfiguration {
 
     @Bean
     public RequestInterceptor requestInterceptor() {
-
         return new ScaffoldRequestInterceptor(scaffoldFeignProPerties.getToken());
     }}

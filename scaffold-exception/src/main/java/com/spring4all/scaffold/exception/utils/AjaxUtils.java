@@ -3,7 +3,7 @@ package com.spring4all.scaffold.exception.utils;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- *
+ * @author fangzhibin
  */
 public class AjaxUtils {
 

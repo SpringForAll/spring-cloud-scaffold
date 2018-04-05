@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.*;
 
 /**
- *
+ * @author fangzhibin
  */
 @Path("/scaffold/swagger.{type:json|yaml}")
 public class ScaffoldApiListingResource extends BaseApiListingResource {

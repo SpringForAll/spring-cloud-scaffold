@@ -4,7 +4,7 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
 /**
- *
+ * @author fangzhibin
  */
 public class ScaffoldRequestInterceptor implements RequestInterceptor {
 

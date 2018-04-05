@@ -3,6 +3,9 @@ package com.spring4all.scaffold.resteasy.validation;
 import javax.validation.ValidationException;
 import java.util.Map;
 
+/**
+ * @author fangzhibin
+ */
 public class ParamValidationException extends ValidationException {
 
     private Map<String, String> errorMap;

@@ -32,7 +32,7 @@
 		<collections4.version>4.1</collections4.version>
 		<math3.version>3.6.1</math3.version>
 		<!-- spring boot -->
-		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+		<spring-boot.version>1.5.10.RELEASE</spring-boot.version>
 		<!-- 和spring boot中spring-security4.2.3.RELEASE的版本一致 -->
 		<spring-security-cas.version>4.2.3.RELEASE</spring-security-cas.version>
 		<spring-session-redis.version>1.3.1.RELEASE</spring-session-redis.version>
@@ -90,7 +90,7 @@
 	        <dependency>
 	            <groupId>org.springframework.cloud</groupId>
 	            <artifactId>spring-cloud-dependencies</artifactId>
-	            <version>Edgware.SR2</version>
+	            <version>Edgware.SR3</version>
 	            <type>pom</type>
 	            <scope>import</scope>
 	        </dependency>

@@ -18,6 +18,9 @@ import javax.ws.rs.ext.ExceptionMapper;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author fangzhibin
+ */
 public class ResteasyExceptionProvider implements ExceptionMapper<Exception> {
 
     private static final Logger logger = LoggerFactory.getLogger(ResteasyExceptionProvider.class);

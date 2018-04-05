@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 /**
- *
+ * @author fangzhibin
  */
 @SpringBootApplication
 @EnableHystrixDashboard

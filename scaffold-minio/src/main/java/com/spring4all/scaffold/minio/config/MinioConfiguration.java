@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ * @author fangzhibin
  */
 @Configuration
 @EnableConfigurationProperties(MinioProperties.class)

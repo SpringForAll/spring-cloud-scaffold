@@ -3,7 +3,7 @@ package com.spring4all.scaffold.feign;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- *
+ * @author fangzhibin
  */
 @ConfigurationProperties("prefix=scaffold")
 public class ScaffoldFeignProPerties {
