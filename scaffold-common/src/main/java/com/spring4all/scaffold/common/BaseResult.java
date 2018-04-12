@@ -1,6 +1,5 @@
 package com.spring4all.scaffold.common;
 
-import java.beans.Transient;
 import java.io.Serializable;
 
 /**
@@ -76,30 +75,4 @@ public class BaseResult<E> implements Serializable {
         this.data = data;
     }
 
-    public static <E> BaseResult<E> success(E e) {
-        return new BaseResult<>(BaseResult.SUCCESS_TYPE, "0", null, e);
-    }
-
-    public static <E> BaseResult<E> error(String code, String msg) {
-        return new BaseResult<>(BaseResult.ERROR_TYPE, code, msg);
-    }
-
-    public static <E> BaseResult<E> fail(String code, String msg) {
-        return new BaseResult<>(BaseResult.FAIL_TYPE, code, msg);
-    }
-
-    @Transient
-    public boolean isSuccess() {
-        return type == SUCCESS_TYPE;
-    }
-
-    @Transient
-    public boolean isError() {
-        return type == ERROR_TYPE;
-    }
-
-    @Transient
-    public boolean isFail() {
-        return type == FAIL_TYPE;
-    }
 }

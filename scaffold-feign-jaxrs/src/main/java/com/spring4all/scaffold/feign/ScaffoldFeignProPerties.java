@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * @author fangzhibin
  */
-@ConfigurationProperties("prefix=scaffold")
+@ConfigurationProperties(prefix="scaffold.feign")
 public class ScaffoldFeignProPerties {
 
     private String token;
