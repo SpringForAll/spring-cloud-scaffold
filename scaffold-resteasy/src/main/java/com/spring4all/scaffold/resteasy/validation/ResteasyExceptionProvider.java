@@ -25,21 +25,23 @@ public class ResteasyExceptionProvider implements ExceptionMapper<Exception> {
     public Response toResponse(Exception e) {
         if(e instanceof BusinessException) {
             BusinessException businessException = (BusinessException) e;
+            logger.error("business exception caused, the exception message is {}", e.getMessage());
             BaseResult baseResult = new BaseResult(BaseResult.FAIL_TYPE, businessException.getCode(), businessException.getMsg(), businessException.getData());
-            return buildResponse(e, Status.BAD_REQUEST, baseResult);
+            return buildResponse(Status.BAD_REQUEST, baseResult);
         } else if (e instanceof AuthorizationException) {
             AuthorizationException be = (AuthorizationException) e;
+            logger.error("authorization exception caused, the exception message is {}", e.getMessage());
             BaseResult baseResult = new BaseResult<>(BaseResult.NO_AUTH_TYPE,
                 be.getCode(), be.getMsg());
-            return buildResponse(e, Status.FORBIDDEN, baseResult);
+            return buildResponse(Status.FORBIDDEN, baseResult);
         }  else {
+            logger.error("exception caused, the exception message is {}", e.getMessage());
             BaseResult<String> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(), BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
-            return buildResponse(e, Status.INTERNAL_SERVER_ERROR, baseResult);
+            return buildResponse(Status.INTERNAL_SERVER_ERROR, baseResult);
         }
     }
 
-    public static Response buildResponse(Exception exception, Status status, BaseResult baseResult) {
-        logger.error("the interface caused error", exception);
+    public static Response buildResponse(Status status, BaseResult baseResult) {
         ResponseBuilder builder = Response.status(status);
         builder.type(MediaType.APPLICATION_JSON);
         builder.entity(baseResult);

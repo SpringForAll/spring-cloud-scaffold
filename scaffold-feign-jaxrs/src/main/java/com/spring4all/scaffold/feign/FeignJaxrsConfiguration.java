@@ -4,6 +4,7 @@ import feign.Contract;
 import feign.RequestInterceptor;
 import feign.jaxrs.JAXRSContract;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +30,7 @@ public class FeignJaxrsConfiguration {
     }
 
     @Bean
+    @ConditionalOnProperty(value="scaffold.rest.enableTokenApply",havingValue = "true", matchIfMissing = true)
     public RequestInterceptor requestInterceptor() {
         return new ScaffoldRequestInterceptor(scaffoldFeignProPerties.getToken());
     }}
