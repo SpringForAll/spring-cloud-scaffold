@@ -25,10 +25,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>jaxrs-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-validator-provider-11</artifactId>
 			<version>${resteasy.version}</version>
 		</dependency>
