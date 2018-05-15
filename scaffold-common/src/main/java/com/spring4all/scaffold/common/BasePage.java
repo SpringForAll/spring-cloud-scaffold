@@ -8,30 +8,31 @@ import java.util.List;
  */
 public class BasePage<E> implements Serializable {
 
-    private Long Total;
+  private Long Total;
 
-    private List<E> list;
+  private List<E> list;
 
-    public BasePage() {}
+  public BasePage() {
+  }
 
-    public BasePage(Long total, List<E> list) {
-        Total = total;
-        this.list = list;
-    }
+  public BasePage(Long total, List<E> list) {
+    Total = total;
+    this.list = list;
+  }
 
-    public Long getTotal() {
-        return Total;
-    }
+  public Long getTotal() {
+    return Total;
+  }
 
-    public void setTotal(Long total) {
-        Total = total;
-    }
+  public void setTotal(Long total) {
+    Total = total;
+  }
 
-    public List<E> getList() {
-        return list;
-    }
+  public List<E> getList() {
+    return list;
+  }
 
-    public void setList(List<E> list) {
-        this.list = list;
-    }
+  public void setList(List<E> list) {
+    this.list = list;
+  }
 }

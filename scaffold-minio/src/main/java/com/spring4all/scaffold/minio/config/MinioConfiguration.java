@@ -15,19 +15,19 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(MinioProperties.class)
 public class MinioConfiguration {
 
-    @Autowired
-    private MinioProperties minioProperties;
+  @Autowired
+  private MinioProperties minioProperties;
 
-    @Bean
-    public MinioClient minioClient() throws InvalidPortException, InvalidEndpointException {
-        MinioClient minioClient = new MinioClient(
-                minioProperties.getEndpoint(),
-                minioProperties.getPort(),
-                minioProperties.getAccessKey(),
-                minioProperties.getSecretKey(),
-                minioProperties.getRegion(),
-                minioProperties.isSecure()
-        );
-        return minioClient;
-    }
+  @Bean
+  public MinioClient minioClient() throws InvalidPortException, InvalidEndpointException {
+    MinioClient minioClient = new MinioClient(
+        minioProperties.getEndpoint(),
+        minioProperties.getPort(),
+        minioProperties.getAccessKey(),
+        minioProperties.getSecretKey(),
+        minioProperties.getRegion(),
+        minioProperties.isSecure()
+    );
+    return minioClient;
+  }
 }

@@ -17,17 +17,17 @@ import javax.ws.rs.ext.Provider;
 @Produces(MediaType.APPLICATION_JSON)
 public class JacksonConfig implements ContextResolver<ObjectMapper> {
 
-    private ObjectMapper objectMapper;
+  private ObjectMapper objectMapper;
 
-    public JacksonConfig() {
-        objectMapper = new ObjectMapper();
-        objectMapper.setDateFormat(new SimpleDateFormat(BaseConstants.DATE_FORMAT_UTC));
-        objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-        objectMapper.setSerializationInclusion(Include.NON_NULL);
-    }
+  public JacksonConfig() {
+    objectMapper = new ObjectMapper();
+    objectMapper.setDateFormat(new SimpleDateFormat(BaseConstants.DATE_FORMAT_UTC));
+    objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    objectMapper.setSerializationInclusion(Include.NON_NULL);
+  }
 
-    @Override
-    public ObjectMapper getContext(Class<?> aClass) {
-        return objectMapper;
-    }
+  @Override
+  public ObjectMapper getContext(Class<?> aClass) {
+    return objectMapper;
+  }
 }

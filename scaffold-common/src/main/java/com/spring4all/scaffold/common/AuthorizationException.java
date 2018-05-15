@@ -4,6 +4,7 @@ package com.spring4all.scaffold.common;
  * @author fangzhibin
  */
 public class AuthorizationException extends RuntimeException {
+
   private static final long serialVersionUID = -9065661397121333085L;
 
   private String code;

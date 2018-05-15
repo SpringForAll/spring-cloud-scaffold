@@ -8,14 +8,14 @@ import feign.RequestTemplate;
  */
 public class ScaffoldRequestInterceptor implements RequestInterceptor {
 
-    private String token;
+  private String token;
 
-    public ScaffoldRequestInterceptor(String token) {
-        this.token = token;
-    }
+  public ScaffoldRequestInterceptor(String token) {
+    this.token = token;
+  }
 
-    @Override
-    public void apply(RequestTemplate template) {
-        template.header("scaffold-token", token);
-    }
+  @Override
+  public void apply(RequestTemplate template) {
+    template.header("scaffold-token", token);
+  }
 }

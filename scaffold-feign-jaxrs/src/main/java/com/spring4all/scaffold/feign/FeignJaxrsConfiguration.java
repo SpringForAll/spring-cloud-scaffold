@@ -16,21 +16,22 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(ScaffoldFeignProPerties.class)
 public class FeignJaxrsConfiguration {
 
-    @Autowired
-    ScaffoldFeignProPerties scaffoldFeignProPerties;
+  @Autowired
+  ScaffoldFeignProPerties scaffoldFeignProPerties;
 
-    @Bean
-    public Contract feignContract() {
-        return new JAXRSContract();
-    }
+  @Bean
+  public Contract feignContract() {
+    return new JAXRSContract();
+  }
 
-    @Bean
-    public ScaffoldErrorDecoder errorDecoder() {
-        return new ScaffoldErrorDecoder();
-    }
+  @Bean
+  public ScaffoldErrorDecoder errorDecoder() {
+    return new ScaffoldErrorDecoder();
+  }
 
-    @Bean
-    @ConditionalOnProperty(value="scaffold.rest.enableTokenApply",havingValue = "true", matchIfMissing = true)
-    public RequestInterceptor requestInterceptor() {
-        return new ScaffoldRequestInterceptor(scaffoldFeignProPerties.getToken());
-    }}
+  @Bean
+  @ConditionalOnProperty(value = "scaffold.rest.enableTokenApply", havingValue = "true", matchIfMissing = true)
+  public RequestInterceptor requestInterceptor() {
+    return new ScaffoldRequestInterceptor(scaffoldFeignProPerties.getToken());
+  }
+}

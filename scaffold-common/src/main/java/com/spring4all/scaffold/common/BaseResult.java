@@ -7,72 +7,73 @@ import java.io.Serializable;
  */
 public class BaseResult<E> implements Serializable {
 
-    public static final int SUCCESS_TYPE = 0;
+  public static final int SUCCESS_TYPE = 0;
 
-    public static final int ERROR_TYPE = -1;
+  public static final int ERROR_TYPE = -1;
 
-    public static final int FAIL_TYPE = -2;
+  public static final int FAIL_TYPE = -2;
 
-    public static final int NO_AUTH_TYPE = -3;
+  public static final int NO_AUTH_TYPE = -3;
 
-    private int type = ERROR_TYPE;
+  private int type = ERROR_TYPE;
 
-    private String code;
+  private String code;
 
-    private String msg;
+  private String msg;
 
-    private E data;
+  private E data;
 
-    public BaseResult() {}
+  public BaseResult() {
+  }
 
-    public BaseResult(String code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
+  public BaseResult(String code, String msg) {
+    this.code = code;
+    this.msg = msg;
+  }
 
-    public BaseResult(int type, String code, String msg) {
-        this.type = type;
-        this.code = code;
-        this.msg = msg;
-    }
+  public BaseResult(int type, String code, String msg) {
+    this.type = type;
+    this.code = code;
+    this.msg = msg;
+  }
 
-    public BaseResult(int type, String code, String msg, E data) {
-        this.type = type;
-        this.code = code;
-        this.msg = msg;
-        this.data = data;
-    }
+  public BaseResult(int type, String code, String msg, E data) {
+    this.type = type;
+    this.code = code;
+    this.msg = msg;
+    this.data = data;
+  }
 
-    public int getType() {
-        return type;
-    }
+  public int getType() {
+    return type;
+  }
 
-    public void setType(int type) {
-        this.type = type;
-    }
+  public void setType(int type) {
+    this.type = type;
+  }
 
-    public String getCode() {
-        return code;
-    }
+  public String getCode() {
+    return code;
+  }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+  public void setCode(String code) {
+    this.code = code;
+  }
 
-    public String getMsg() {
-        return msg;
-    }
+  public String getMsg() {
+    return msg;
+  }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+  public void setMsg(String msg) {
+    this.msg = msg;
+  }
 
-    public E getData() {
-        return data;
-    }
+  public E getData() {
+    return data;
+  }
 
-    public void setData(E data) {
-        this.data = data;
-    }
+  public void setData(E data) {
+    this.data = data;
+  }
 
 }

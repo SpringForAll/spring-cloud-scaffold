@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfiguraction {
 
-    @Bean
-    public SwaggerSerializers swaggerSerializers() {
-        return new SwaggerSerializers();
-    }
+  @Bean
+  public SwaggerSerializers swaggerSerializers() {
+    return new SwaggerSerializers();
+  }
 
-    @Bean
-    public ScaffoldApiListingResource apiListingResource() {
-        return new ScaffoldApiListingResource();
-    }
+  @Bean
+  public ScaffoldApiListingResource apiListingResource() {
+    return new ScaffoldApiListingResource();
+  }
 }

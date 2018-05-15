@@ -9,4 +9,5 @@ import javax.ws.rs.core.Application;
  */
 @ApplicationPath("/service/rs")
 public class JaxRsApplication extends Application {
+
 }
