@@ -6,7 +6,7 @@ package com.spring4all.scaffold.common;
  */
 public enum BaseErrorCode {
 
-  PARAMTER_ILLEGAL("400", "paramter illegal"),
+  PARAMETER_ILLEGAL("400", "paramter illegal"),
 
   SYSTEM_INTERNAL_ERROR("500", "system internal error"),
 

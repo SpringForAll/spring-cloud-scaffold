@@ -45,8 +45,8 @@ public class BeanValidationExceptionAdvice {
         errorMap.put(objectName + code, message);
       }
     }
-    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMTER_ILLEGAL.getCode(),
-        BaseErrorCode.PARAMTER_ILLEGAL.getMsg(), errorMap);
+    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
+        BaseErrorCode.PARAMETER_ILLEGAL.getMsg(), errorMap);
   }
 
   @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -59,8 +59,8 @@ public class BeanValidationExceptionAdvice {
       String message = error.getMessage();
       errorMap.put(code, message);
     }
-    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMTER_ILLEGAL.getCode(),
-        BaseErrorCode.PARAMTER_ILLEGAL.getMsg(), errorMap);
+    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
+        BaseErrorCode.PARAMETER_ILLEGAL.getMsg(), errorMap);
   }
 
 }

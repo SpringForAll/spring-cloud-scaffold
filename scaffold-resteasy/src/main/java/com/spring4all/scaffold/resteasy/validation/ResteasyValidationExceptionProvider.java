@@ -49,8 +49,8 @@ public class ResteasyValidationExceptionProvider implements ExceptionMapper<Vali
       logger.error("resteasy violation exception caused, the exception message is {}",
           e.getMessage());
       BaseResult<Map<String, String>> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
-          BaseErrorCode.PARAMTER_ILLEGAL.getCode(),
-          BaseErrorCode.PARAMTER_ILLEGAL.getMsg());
+          BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
+          BaseErrorCode.PARAMETER_ILLEGAL.getMsg());
       if (null != resteasyViolationException.getReturnValueViolations()
           && resteasyViolationException.getReturnValueViolations().size() == 0) {
         return buildResponse(Status.BAD_REQUEST, baseResult);
