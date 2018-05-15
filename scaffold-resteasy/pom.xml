@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.spring4all</groupId>
-		<artifactId>scaffold-dependencies</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+  <parent>
+    <groupId>com.spring4all</groupId>
+    <artifactId>scaffold-dependencies</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
 
-	<groupId>com.spring4all</groupId>
-	<artifactId>scaffold-resteasy</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <groupId>com.spring4all</groupId>
+  <artifactId>scaffold-resteasy</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-	<name>scaffold-resteasy</name>
-	<description>scaffold-resteasy</description>
+  <name>scaffold-resteasy</name>
+  <description>scaffold-resteasy</description>
 
-	<dependencies>
+  <dependencies>
 
-		<dependency>
-			<groupId>com.paypal.springboot</groupId>
-			<artifactId>resteasy-spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-validator-provider-11</artifactId>
-			<version>${resteasy.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.spring4all</groupId>
-			<artifactId>scaffold-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>com.paypal.springboot</groupId>
+      <artifactId>resteasy-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-validator-provider-11</artifactId>
+      <version>${resteasy.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.spring4all</groupId>
+      <artifactId>scaffold-common</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 </project>
