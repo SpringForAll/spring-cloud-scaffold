@@ -8,8 +8,9 @@ import org.springframework.context.annotation.Bean;
  * support the feign file upload
  *
  * @FeignClient(name = "feign-service-name",configuration = FeignFormConfiguration.class) and spring
- * mvc must use @RequestPart annotation to invoke the feign service Created by fangzhibin on
- * 2018/2/9.
+ * mvc must use @RequestPart annotation to invoke the feign service
+ *
+ * @author fangzhibin on 2018/2/9.
  */
 public class FeignFormConfiguration {
 
