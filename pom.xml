@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.spring4all</groupId>
+  <artifactId>scaffold-build</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Scaffold Build</name>
+  <description>Scaffold Build</description>
+  <url>https://github.com/Xiaobaxi/spring-cloud-scaffold</url>
+
+  <modules>
+    <module>scaffold-dependencies</module>
+    <module>scaffold-common</module>
+    <module>scaffold-logger</module>
+    <module>scaffold-minio</module>
+    <module>scaffold-feign-jaxrs</module>
+    <module>scaffold-resteasy</module>
+    <module>scaffold-exception</module>
+	<module>scaffold-swagger-ui</module>
+	<module>scaffold-service-discovery</module>
+	<module>scaffold-hystrix-dashboard</module>
+	<module>scaffold-turbine-stream-server</module>
+  </modules>
+
+  <scm>
+    <url>https://github.com/Xiaobaxi/spring-cloud-scaffold</url>
+    <connection>scm:git:https://github.com/Xiaobaxi/spring-cloud-scaffold.git
+    </connection>
+    <developerConnection>
+      scm:git:https://github.com/Xiaobaxi/spring-cloud-scaffold.git
+    </developerConnection>
+  </scm>
+  
+</project>
