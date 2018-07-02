@@ -19,10 +19,10 @@
     <module>scaffold-feign-jaxrs</module>
     <module>scaffold-resteasy</module>
     <module>scaffold-exception</module>
-	<module>scaffold-swagger-ui</module>
-	<module>scaffold-service-discovery</module>
-	<module>scaffold-hystrix-dashboard</module>
-	<module>scaffold-turbine-stream-server</module>
+    <module>scaffold-swagger-ui</module>
+    <module>scaffold-service-discovery</module>
+    <module>scaffold-hystrix-dashboard</module>
+    <module>scaffold-turbine-stream-server</module>
   </modules>
 
   <scm>

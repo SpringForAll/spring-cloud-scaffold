@@ -7,7 +7,7 @@
   <groupId>com.spring4all</groupId>
   <artifactId>scaffold-dependencies</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>scaffold-dependencies</name>
   <description>scaffold-dependencies</description>
