@@ -37,6 +37,7 @@
     <collections4.version>4.1</collections4.version>
     <math3.version>3.6.1</math3.version>
 
+    <spring-cloud-dependencies.version>Edgware.SR4</spring-cloud-dependencies.version>
     <spring.version>4.3.18.RELEASE</spring.version>
     <!-- 和spring boot中spring-security4.2.7.RELEASE的版本一致 -->
     <spring-security-cas.version>4.2.7.RELEASE</spring-security-cas.version>
@@ -96,15 +97,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Edgware.SR3</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <!-- spring io platform -->
-      <dependency>
-        <groupId>io.spring.platform</groupId>
-        <artifactId>platform-bom</artifactId>
-        <version>Brussels-SR7</version>
+        <version>${spring-cloud-dependencies.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
