@@ -24,18 +24,18 @@ public class ResteasyExceptionProvider implements ExceptionMapper<Exception> {
     if (e instanceof BusinessException) {
       BusinessException businessException = (BusinessException) e;
       logger.error("business exception caused, the exception message is {}", e.getMessage());
-      BaseResult baseResult = new BaseResult(BaseResult.FAIL_TYPE, businessException.getCode(),
+      BaseResult baseResult = new BaseResult(businessException.getCode(),
           businessException.getMsg(), businessException.getData());
       return buildResponse(Status.BAD_REQUEST, baseResult);
     } else if (e instanceof AuthorizationException) {
       AuthorizationException be = (AuthorizationException) e;
       logger.error("authorization exception caused, the exception message is {}", e.getMessage());
-      BaseResult baseResult = new BaseResult<>(BaseResult.NO_AUTH_TYPE,
+      BaseResult baseResult = new BaseResult<>(
           be.getCode(), be.getMsg());
       return buildResponse(Status.FORBIDDEN, baseResult);
     } else {
       logger.error("exception caused, the exception message is {}", e.getMessage());
-      BaseResult<String> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
+      BaseResult<String> baseResult = new BaseResult<>(
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(),
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
       return buildResponse(Status.INTERNAL_SERVER_ERROR, baseResult);

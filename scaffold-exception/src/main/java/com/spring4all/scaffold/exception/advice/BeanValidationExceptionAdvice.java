@@ -45,7 +45,7 @@ public class BeanValidationExceptionAdvice {
         errorMap.put(objectName + code, message);
       }
     }
-    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
+    return new BaseResult<>(BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
         BaseErrorCode.PARAMETER_ILLEGAL.getMsg(), errorMap);
   }
 
@@ -59,7 +59,7 @@ public class BeanValidationExceptionAdvice {
       String message = error.getMessage();
       errorMap.put(code, message);
     }
-    return new BaseResult<>(BaseResult.ERROR_TYPE, BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
+    return new BaseResult<>(BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
         BaseErrorCode.PARAMETER_ILLEGAL.getMsg(), errorMap);
   }
 

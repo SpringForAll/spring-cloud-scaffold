@@ -50,7 +50,7 @@ public class ExceptionFilter implements Filter {
           httpServletResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
           if (AjaxUtils.check(httpServletRequest)) {
             httpServletResponse.setHeader("content-type", "application/json;charset=UTF-8");
-            BaseResult<String> result = new BaseResult<>(BaseResult.ERROR_TYPE,
+            BaseResult<String> result = new BaseResult<>(
                 businessException.getCode(), businessException.getMsg());
             PrintWriter out = response.getWriter();
             out.print(objectMapper.writeValueAsString(result));

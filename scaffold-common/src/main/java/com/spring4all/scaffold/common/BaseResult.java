@@ -7,16 +7,6 @@ import java.io.Serializable;
  */
 public class BaseResult<E> implements Serializable {
 
-  public static final int SUCCESS_TYPE = 0;
-
-  public static final int ERROR_TYPE = -1;
-
-  public static final int FAIL_TYPE = -2;
-
-  public static final int NO_AUTH_TYPE = -3;
-
-  private int type = ERROR_TYPE;
-
   private String code;
 
   private String msg;
@@ -31,25 +21,10 @@ public class BaseResult<E> implements Serializable {
     this.msg = msg;
   }
 
-  public BaseResult(int type, String code, String msg) {
-    this.type = type;
-    this.code = code;
-    this.msg = msg;
-  }
-
-  public BaseResult(int type, String code, String msg, E data) {
-    this.type = type;
+  public BaseResult(String code, String msg, E data) {
     this.code = code;
     this.msg = msg;
     this.data = data;
-  }
-
-  public int getType() {
-    return type;
-  }
-
-  public void setType(int type) {
-    this.type = type;
   }
 
   public String getCode() {

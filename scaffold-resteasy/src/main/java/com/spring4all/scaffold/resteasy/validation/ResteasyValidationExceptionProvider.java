@@ -27,7 +27,7 @@ public class ResteasyValidationExceptionProvider implements ExceptionMapper<Vali
     if (e instanceof ConstraintDeclarationException || e instanceof ConstraintDeclarationException
         || e instanceof GroupDefinitionException) {
       logger.error("system internal exception caused, the exception message is {}", e.getMessage());
-      BaseResult<String> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
+      BaseResult<String> baseResult = new BaseResult<>(
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(),
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
       return buildResponse(Status.INTERNAL_SERVER_ERROR, baseResult);
@@ -35,7 +35,7 @@ public class ResteasyValidationExceptionProvider implements ExceptionMapper<Vali
     if (e instanceof ParamValidationException) {
       logger
           .error("param validation exception caused, the exception message is {}", e.getMessage());
-      BaseResult<Map<String, String>> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
+      BaseResult<Map<String, String>> baseResult = new BaseResult<>(
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(),
           BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
       ParamValidationException pe = (ParamValidationException) e;
@@ -47,8 +47,8 @@ public class ResteasyValidationExceptionProvider implements ExceptionMapper<Vali
           .cast(e);
       Exception exception = resteasyViolationException.getException();
       logger.error("resteasy violation exception caused, the exception message is {}",
-          e.getMessage());
-      BaseResult<Map<String, String>> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
+          exception.getMessage());
+      BaseResult<Map<String, String>> baseResult = new BaseResult<>(
           BaseErrorCode.PARAMETER_ILLEGAL.getCode(),
           BaseErrorCode.PARAMETER_ILLEGAL.getMsg());
       if (null != resteasyViolationException.getReturnValueViolations()
@@ -59,7 +59,7 @@ public class ResteasyValidationExceptionProvider implements ExceptionMapper<Vali
       }
     }
 
-    BaseResult<String> baseResult = new BaseResult<>(BaseResult.ERROR_TYPE,
+    BaseResult<String> baseResult = new BaseResult<>(
         BaseErrorCode.SYSTEM_INTERNAL_ERROR.getCode(),
         BaseErrorCode.SYSTEM_INTERNAL_ERROR.getMsg());
     return buildResponse(Status.INTERNAL_SERVER_ERROR, baseResult);
