@@ -15,14 +15,14 @@
     <module>scaffold-dependencies</module>
     <module>scaffold-common</module>
     <module>scaffold-logger</module>
+    <module>scaffold-cache</module>
+    <module>scaffold-session</module>
     <module>scaffold-minio</module>
     <module>scaffold-feign-jaxrs</module>
     <module>scaffold-resteasy</module>
     <module>scaffold-exception</module>
     <module>scaffold-swagger-ui</module>
-    <module>scaffold-service-discovery</module>
-    <module>scaffold-hystrix-dashboard</module>
-    <module>scaffold-turbine-stream-server</module>
+
   </modules>
 
   <scm>
