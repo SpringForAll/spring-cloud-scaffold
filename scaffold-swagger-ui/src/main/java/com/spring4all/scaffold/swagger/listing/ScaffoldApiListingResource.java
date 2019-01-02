@@ -2,8 +2,10 @@ package com.spring4all.scaffold.swagger.listing;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.jaxrs.listing.BaseApiListingResource;
+import io.swagger.models.Swagger;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,7 +35,15 @@ public class ScaffoldApiListingResource extends BaseApiListingResource {
       @Context ServletConfig sc,
       @Context HttpHeaders headers,
       @Context UriInfo uriInfo,
+      @Context HttpServletRequest servletRequest,
       @PathParam("type") String type) {
+    Swagger swagger = process(app, context, sc, headers, uriInfo);
+    if (swagger == null) {
+      return Response.status(404).build();
+    }
+    if (swagger.getHost() == null) {
+      swagger.setHost(servletRequest.getServerName() + ":" + servletRequest.getServerPort());
+    }
     if (StringUtils.isNotBlank(type) && type.trim().equalsIgnoreCase("yaml")) {
       return getListingYamlResponse(app, context, sc, headers, uriInfo);
     } else {
