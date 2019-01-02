@@ -47,7 +47,7 @@
     <!--和spring.boot.resteasy 2.3.4.RELEASE的resteasy3.1.4的版本一致 -->
     <spring.boot.resteasy.version>2.3.4-RELEASE</spring.boot.resteasy.version>
     <resteasy.version>3.1.4.Final</resteasy.version>
-    <jboss-jaxrs-api_2.0_spec.verison>1.0.1.Beta1</jboss-jaxrs-api_2.0_spec.verison>
+    <jaxrs.version>3.6.2.Final</jaxrs.version>
     <!-- pinyin4j -->
     <pinyin4j.version>2.5.1</pinyin4j.version>
     <!-- mybatis -->
@@ -240,9 +240,9 @@
         <version>${spring.boot.resteasy.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.jboss.spec.javax.ws.rs</groupId>
-        <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
-        <version>${jboss-jaxrs-api_2.0_spec.verison}</version>
+        <groupId>org.jboss.resteasy</groupId>
+        <artifactId>resteasy-jaxrs</artifactId>
+        <version>${resteasy.version}</version>
       </dependency>
       <!-- xml -->
       <dependency>
