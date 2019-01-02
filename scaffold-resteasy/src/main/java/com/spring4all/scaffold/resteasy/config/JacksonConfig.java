@@ -1,6 +1,5 @@
 package com.spring4all.scaffold.resteasy.config;
 
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.spring4all.scaffold.common.BaseConstants;
@@ -23,7 +22,6 @@ public class JacksonConfig implements ContextResolver<ObjectMapper> {
     objectMapper = new ObjectMapper();
     objectMapper.setDateFormat(new SimpleDateFormat(BaseConstants.DATE_FORMAT_UTC));
     objectMapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-    objectMapper.setSerializationInclusion(Include.NON_NULL);
   }
 
   @Override
