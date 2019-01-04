@@ -7,7 +7,7 @@ import javax.ws.rs.core.Application;
 /**
  * @author fangzhibin
  */
-@ApplicationPath("/service/rs")
+@ApplicationPath("/rs")
 public class JaxRsApplication extends Application {
 
 }
