@@ -3,8 +3,8 @@ package com.spring4all.scaffold.resteasy.filter;
 import com.spring4all.scaffold.common.AuthorizationException;
 import com.spring4all.scaffold.common.BaseErrorCode;
 import com.spring4all.scaffold.common.annotation.TokenIgnore;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerRequestFilter;
 import org.jboss.resteasy.core.ResourceMethodInvoker;
 import org.jboss.resteasy.core.interception.jaxrs.PostMatchContainerRequestContext;
 import org.slf4j.Logger;
@@ -14,7 +14,7 @@ import org.springframework.core.annotation.AnnotationUtils;
 /**
  * @author fangzhibin
  */
-public class ScaffoldTokenRequestFilter implements ClientRequestFilter {
+public class ScaffoldTokenRequestFilter implements ContainerRequestFilter {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(ScaffoldTokenRequestFilter.class);
 
@@ -27,7 +27,7 @@ public class ScaffoldTokenRequestFilter implements ClientRequestFilter {
   }
 
   @Override
-  public void filter(ClientRequestContext requestContext) {
+  public void filter(ContainerRequestContext requestContext) {
     ResourceMethodInvoker resourceMethodInvoker = ((PostMatchContainerRequestContext) requestContext)
         .getResourceMethod();
     TokenIgnore tokenIgnore = AnnotationUtils
@@ -36,7 +36,7 @@ public class ScaffoldTokenRequestFilter implements ClientRequestFilter {
       String token = requestContext.getHeaderString("scaffold-token");
       if (token == null) {
         LOGGER.error("Invoke restful without Token header. RequestURI: [{}]",
-            ((PostMatchContainerRequestContext) requestContext).getUriInfo().getPath());
+            requestContext.getUriInfo().getPath());
         throw new AuthorizationException(BaseErrorCode.FORBIDDEN.getCode(),
             "Token is null,please apply a token!");
       }
