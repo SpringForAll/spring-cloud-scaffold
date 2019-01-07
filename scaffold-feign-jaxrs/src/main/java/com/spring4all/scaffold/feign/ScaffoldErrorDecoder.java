@@ -1,6 +1,7 @@
 package com.spring4all.scaffold.feign;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spring4all.scaffold.common.AuthorizationException;
 import com.spring4all.scaffold.common.BaseResult;
 import com.spring4all.scaffold.common.BusinessException;
 import feign.Response;
@@ -29,6 +30,8 @@ public class ScaffoldErrorDecoder extends ErrorDecoder.Default {
         int status = response.status();
         if (status >= 500) {
           throw new BusinessException(result.getCode(), result.getMsg(), result.getData(), null);
+        }  else if (status == 403) {
+          throw new AuthorizationException(result.getCode(), result.getMsg());
         } else if (status >= 400) {
           throw new BusinessException(result.getCode(), result.getMsg(), result.getData(), null);
         }

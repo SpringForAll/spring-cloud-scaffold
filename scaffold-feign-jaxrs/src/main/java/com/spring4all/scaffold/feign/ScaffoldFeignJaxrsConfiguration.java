@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(ScaffoldFeignProPerties.class)
-public class FeignJaxrsConfiguration {
+public class ScaffoldFeignJaxrsConfiguration {
 
   @Autowired
   ScaffoldFeignProPerties scaffoldFeignProPerties;
