@@ -59,7 +59,7 @@
     <feign-form.version>3.0.3</feign-form.version>
     <!-- xml -->
     <xml-apis.version>1.4.01</xml-apis.version>
-    <dom4j2.version>2.0.1</dom4j2.version>
+    <dom4j2.version>2.1.1</dom4j2.version>
     <!-- mapstruct -->
     <mapstruct.version>1.2.0.Final</mapstruct.version>
     <!-- minio -->
