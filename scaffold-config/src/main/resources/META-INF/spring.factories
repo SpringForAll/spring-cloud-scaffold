@@ -2,4 +2,4 @@ org.springframework.boot.env.EnvironmentPostProcessor=\
 com.spring4all.scaffold.config.ScaffoldEnvironmentPostProcessor
 
 org.springframework.cloud.bootstrap.BootstrapConfiguration=\
-com.spring4all.scaffold.config.ScaffoldConfigServicePropertySourceLocator
+com.spring4all.scaffold.config.ScaffoldConfigConfiguration

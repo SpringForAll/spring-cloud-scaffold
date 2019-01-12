@@ -3,6 +3,7 @@ package com.spring4all.scaffold.config;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.cloud.bootstrap.config.PropertySourceLocator;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.env.CompositePropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.MapPropertySource;
@@ -12,6 +13,7 @@ import org.springframework.core.env.PropertySource;
  * ScaffoldConfigServicePropertySourceLocator
  * @author fangzhibin
  */
+@Order(0)
 public class ScaffoldConfigServicePropertySourceLocator implements PropertySourceLocator {
 
   @Override
