@@ -1,2 +1,2 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-  com.spring4all.scaffold.logger.processor.ScaffoldLoggerTraceEnvironmentPostProcessor
+com.spring4all.scaffold.logger.processor.ScaffoldLoggerTraceEnvironmentPostProcessor
